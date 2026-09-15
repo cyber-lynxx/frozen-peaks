@@ -1,0 +1,149 @@
+h1 {
+    font-family: "Economica", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+    font-size: 45px;
+
+    align-self: center;
+}
+
+h2 {
+    font-family: "Economica", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+    font-size: 30px;
+
+    align-self: center;
+
+    margin-top: 0dvh;
+    padding: 0%;
+
+}
+
+button {
+    font-family: "Economica", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+
+    align-self: center;
+
+    margin-top: 0%;
+    padding: 1dvh;
+
+    height: 5dvh;
+    width: 10dvw;
+
+    background-color: rgba(128, 194, 194, 0.4);
+
+    cursor: pointer;
+}
+
+.ground {
+    position: absolute;
+    bottom: 0%;
+    width: 100dvw;
+    left: 0dvw;
+    height: 25dvh;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+
+    background-image: url(https://images.unsplash.com/photo-1454496522488-7a8e488e8606?q=80&w=1176&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D);
+
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+
+    width: 100dvw;
+    height: 100dvh;
+
+    overflow: hidden;
+    margin: 0%;
+    padding: 0%;
+}
+
+.square {
+    width: 5dvw;
+    height: 5dvw;
+    background-color: rgb(52, 52, 179);
+    left: 1dvw;
+
+    position: absolute;
+}
+
+.snowball {
+    width: 7dvw;
+    height: 7dvw;
+
+    position: absolute;
+    z-index: 10;
+}
+
+.arrow-zone {
+    right: 0%;
+
+    width: 93dvw;
+    height: 20.625dvh;
+
+    position: absolute;
+}
+
+.threshold-line {
+    left: 50dvw;
+    width: 0.5dvw;
+    height: 82dvh;
+    top: 0%;
+
+    background-color: rgba(23, 48, 86, 0.5);
+    position: absolute;
+}
+
+.arrow-image {
+    position: absolute;
+    right: 3dvw;
+    
+    width: auto;
+    height: 18dvh;
+}
+
+.bg-image-credit {
+    position: absolute;
+
+    bottom: 0dvh;
+    right: 1dvw;
+
+    font-family: "Economica", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 12px;
+}
+
+.economica-regular {
+    font-family: "Economica", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+  }
+  
+.economica-bold {
+    font-family: "Economica", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+}
+
+.economica-regular-italic {
+    font-family: "Economica", sans-serif;
+    font-weight: 400;
+    font-style: italic;
+}
+
+.economica-bold-italic {
+    font-family: "Economica", sans-serif;
+    font-weight: 700;
+    font-style: italic;
+}  
+
+::selection {
+    background-color: rgba(83, 148, 148, 0.35);
+}
