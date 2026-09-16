@@ -12,7 +12,13 @@ setInterval(() => {
 if (throw_snowball) {
     // Creating another snowball image
     let snowball = document.getElementById("snowball");
+    let snowball_clone = snowball.cloneNode(true);
 
-    let snowball_id = "snowball" + snowball_number
+    // Giving it a unique ID
+    let snowball_cloneID = `snowball${snowball_number}`;
+    snowball_clone.id = snowball_cloneID;
 
-}
+    // Actually putting it in the HTML
+    document.body.appendChild(snowball_clone);
+
+};
