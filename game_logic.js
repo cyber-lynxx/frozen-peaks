@@ -19,6 +19,9 @@ function throw_snowball_function() {
             // Giving it a unique ID
             let snowball_cloneID = `snowball${snowball_number}`;
             snowball_clone.id = snowball_cloneID;
+
+            // Making it visible, because the image it is being cloned from has been hidden
+            snowball_clone.style.display = "block";
         
             // Actually putting it in the HTML
             document.body.appendChild(snowball_clone);
@@ -32,4 +35,4 @@ function throw_snowball_function() {
 
 };
 
-document.addEventListener("click", throw_snowball_function);
+document.addEventListener("click", throw_snowball_function, {once: true});
