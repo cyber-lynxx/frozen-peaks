@@ -27,7 +27,10 @@ function throw_snowball_function() {
     
         // Adding 1 to snowball_number and resetting the throw_snowball variable
         snowball_number++;
-    }   throw_snowball = false;
+        throw_snowball = false;
+
+        console.log("function run!");
+    }   
 };
 
 document.addEventListener("click", throw_snowball_function, {once: true});
