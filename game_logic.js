@@ -13,6 +13,8 @@ function throw_snowball_function() {
     console.log("function run!");
     
     if (throw_snowball) {
+        console.log("throw_snowball is true!");
+        
         // Creating another snowball image
         let snowball = document.getElementById("snowball");
         let snowball_clone = snowball.cloneNode(true);
