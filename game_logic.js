@@ -7,10 +7,15 @@ snowball_number = 1
 // throw_snowball will become true every second
 setInterval(() => {
     throw_snowball = true;
+
+    throw_snowball_function();
 }, 1000);
 
 function throw_snowball_function() {
     console.log("function run!");
+
+    let click_message = document.getElementById("click_message");
+    click_message.style.display = "none";
     
     if (throw_snowball) {
         console.log("throw_snowball is true!");
