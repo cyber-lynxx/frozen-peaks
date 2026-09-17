@@ -10,6 +10,8 @@ setInterval(() => {
 }, 1000);
 
 function throw_snowball_function() {
+    console.log("function run!");
+    
     if (throw_snowball) {
         // Creating another snowball image
         let snowball = document.getElementById("snowball");
@@ -28,8 +30,6 @@ function throw_snowball_function() {
         // Adding 1 to snowball_number and resetting the throw_snowball variable
         snowball_number++;
         throw_snowball = false;
-
-        console.log("function run!");
     }   
 };
 
