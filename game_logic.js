@@ -2,13 +2,17 @@ let snowballs_hit = 0;
 
 throw_snowball = false;
 
-snowball_number = 1
+snowball_number = 1;
+
+function_run_amount = 0;
 
 // throw_snowball will become true every second
 setInterval(() => {
     throw_snowball = true;
 
-    throw_snowball_function();
+    if (function_run_amount > 0) {
+        throw_snowball_function();
+    };
 }, 1000);
 
 function throw_snowball_function() {
@@ -38,6 +42,8 @@ function throw_snowball_function() {
         snowball_number++;
         throw_snowball = false;
     }   
+
+    function_run_amount++;
 };
 
 document.addEventListener("click", throw_snowball_function, {once: true});
