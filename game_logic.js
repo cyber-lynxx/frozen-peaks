@@ -10,29 +10,24 @@ setInterval(() => {
 }, 1000);
 
 function throw_snowball_function() {
-    while (true) {
-        if (throw_snowball) {
-            // Creating another snowball image
-            let snowball = document.getElementById("snowball");
-            let snowball_clone = snowball.cloneNode(true);
-        
-            // Giving it a unique ID
-            let snowball_cloneID = `snowball${snowball_number}`;
-            snowball_clone.id = snowball_cloneID;
+    if (throw_snowball) {
+        // Creating another snowball image
+        let snowball = document.getElementById("snowball");
+        let snowball_clone = snowball.cloneNode(true);
+    
+        // Giving it a unique ID
+        let snowball_cloneID = `snowball${snowball_number}`;
+        snowball_clone.id = snowball_cloneID;
 
-            // Making it visible, because the image it is being cloned from has been hidden
-            snowball_clone.style.display = "block";
-        
-            // Actually putting it in the HTML
-            document.body.appendChild(snowball_clone);
-        
-            // Adding 1 to snowball_number-
-            snowball_number++;
-        } else {
-            continue;
-        }
-    }
-
+        // Making it visible, because the image it is being cloned from has been hidden
+        snowball_clone.style.display = "block";
+    
+        // Actually putting it in the HTML
+        document.body.appendChild(snowball_clone);
+    
+        // Adding 1 to snowball_number and resetting the throw_snowball variable
+        snowball_number++;
+    }   throw_snowball = false;
 };
 
 document.addEventListener("click", throw_snowball_function, {once: true});
