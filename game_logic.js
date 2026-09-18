@@ -1,10 +1,16 @@
+// Note: when the snowballs move, they are all using the same distance variables
+
 let snowballs_hit = 0;
 
-throw_snowball = false;
+let throw_snowball = false;
 
-snowball_number = 1;
+let snowball_number = 1;
 
-function_run_amount = 0;
+let function_run_amount = 0;
+
+let snowball_distance_from_rightINT = 100;
+
+let final_distance = 100;
 
 // throw_snowball will become true every second
 setInterval(() => {
@@ -14,6 +20,33 @@ setInterval(() => {
         throw_snowball_function();
     };
 }, 1000);
+
+function lane_movement(lane_number, snowball_clone) {
+    console.log(`lane_movement function initiated! Lane: ${lane_number}`);
+    
+    // Making the snowball actually TRAVEL because it is an obstinate couch potato :(
+    
+    console.log(`Lane ${lane_number}`);
+
+    if (lane_number == 1) snowball_clone.style.bottom = "18.8125dvh";
+    if (lane_number == 2) snowball_clone.style.bottom = "40dvh";
+    if (lane_number == 3) snowball_clone.style.bottom = "60dvh";
+    if (lane_number == 4) snowball_clone.style.bottom = "81dvh";
+
+    while (final_distance >= 0) {
+        // Runs every hundreth of a second :D Increase snowball_distance_from_rightINT, which is a value over 100, and divide that by 100. This will give a smaller value, which will give the snowball a smoother movement across the screen. But because of this, you end up with a number way too different from the previous, which would make the snowball basically teleport across the screen, so we subtract this value from 100. Finally, we take that final value and update the DOM.
+        setInterval(() => {
+            snowball_distance_from_rightINT++;
+    
+            let snowball_distance_from_rightDEC = snowball_distance_from_rightINT / 100;
+    
+            final_distance = 100 - snowball_distance_from_rightDEC;
+    
+            snowball_clone.style.right = `${final_distance}dvw`;
+
+        }, 10);   
+    }
+}
 
 function throw_snowball_function() {
     console.log("function run!");
@@ -41,6 +74,11 @@ function throw_snowball_function() {
         // Adding 1 to snowball_number and resetting the throw_snowball variable
         snowball_number++;
         throw_snowball = false;
+
+        // This will get a random number ranging from 1 to 4, inclusively, and each number corresponds to a lane for the snowball to travel along
+        let lane_number = Math.floor(Math.random() * 4) + 1;
+
+        lane_movement(lane_number, snowball_clone);
     }   
 
     function_run_amount++;
