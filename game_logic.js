@@ -8,12 +8,8 @@ let snowball_number = 1;
 
 let function_run_amount = 0;
 
-let snowball_distance_from_rightINT = 100;
-
-let final_distance = 100;
-
 // throw_snowball will become true every second
-setInterval(() => {
+const throw_snowball_timer = setInterval(() => {
     throw_snowball = true;
 
     if (function_run_amount > 0) {
@@ -33,25 +29,34 @@ function lane_movement(lane_number, snowball_clone) {
     if (lane_number == 3) snowball_clone.style.bottom = "60dvh";
     if (lane_number == 4) snowball_clone.style.bottom = "81dvh";
 
-    console.log(`helloooo`);
+    console.log(`line 36`);
 
-    while (final_distance >= 0) {
-        console.log("line 39");
-        
-        // Runs every hundreth of a second :D Increase snowball_distance_from_rightINT, which is a value over 100, and divide that by 100. This will give a smaller value, which will give the snowball a smoother movement across the screen. But because of this, you end up with a number way too different from the previous, which would make the snowball basically teleport across the screen, so we subtract this value from 100. Finally, we take that final value and update the DOM.
-        setInterval(() => {
-            console.log("line 43");
-            snowball_distance_from_rightINT++;
-    
-            let snowball_distance_from_rightDEC = snowball_distance_from_rightINT / 100;
-    
-            final_distance = 100 - snowball_distance_from_rightDEC;
-    
-            snowball_clone.style.right = `${final_distance}dvw`;
+    // Animating the snwoball across the screen
+    const crossing_time_ms = 5000;
+    const start_position = 100;
+    const end_position = 0;
 
-        }, 10);   
-        console.log("line 53");
+    const animation_start_time = performance.now();
+
+    function move_snowball(current_time) {
+        const time_elapsed = current_time - animation_start_time;
+        const progress = Math.min(time_elapsed / crossing_time_ms, 1);
+        const distance_from_right = start_position - progress * (start_position - end_position);
+
+        snowball_clone.style.right = `${distance_from_right}dvw`;
+
+        if (progress < 1) {
+            requestAnimationFrame(move_snowball);
+        } else {
+            console.log("Snowball has made it to the end!");
+            snowball_clone.remove();
+        }
     }
+
+    // Actually starting the animation
+    snowball_clone.style.right = `${start_position}dvw`;
+    requestAnimationFrame(move_snowball);
+    
 }
 
 function throw_snowball_function() {
