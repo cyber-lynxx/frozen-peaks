@@ -50,6 +50,7 @@ function lane_movement(lane_number, snowball_clone) {
             snowball_clone.style.right = `${final_distance}dvw`;
 
         }, 10);   
+        console.log("line 53");
     }
 }
 
