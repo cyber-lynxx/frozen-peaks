@@ -24,14 +24,26 @@ function lane_movement(lane_number, snowball_clone) {
     
     console.log(`Lane ${lane_number}`);
 
-    if (lane_number == 1) snowball_clone.style.bottom = "18.8125dvh";
-    if (lane_number == 2) snowball_clone.style.bottom = "40dvh";
-    if (lane_number == 3) snowball_clone.style.bottom = "60dvh";
-    if (lane_number == 4) snowball_clone.style.bottom = "81dvh";
+    if (lane_number == 1) {
+        snowball_clone.style.bottom = "18.8125dvh";
+        let lane_1 = true;
+    }
+    if (lane_number == 2) {
+        snowball_clone.style.bottom = "40dvh";
+        let lane_2 = true;
+    }
+    if (lane_number == 3) {
+        snowball_clone.style.bottom = "60dvh";
+        let lane_3 = true;
+    }
+    if (lane_number == 4) {
+        snowball_clone.style.bottom = "81dvh";
+        let lane_4 = true;
+    }
 
     console.log(`line 36`);
 
-    // Animating the snwoball across the screen
+    // Animating the snwoball across the screen and checking for clicks
     const crossing_time_ms = 5000;
     const start_position = 100;
     const end_position = 0;
@@ -50,6 +62,10 @@ function lane_movement(lane_number, snowball_clone) {
         } else {
             console.log("Snowball has made it to the end!");
             snowball_clone.remove();
+        }
+
+        if (progress > 0.5) {
+            if (lane_1) 
         }
     }
 
