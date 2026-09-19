@@ -33,9 +33,14 @@ function lane_movement(lane_number, snowball_clone) {
     if (lane_number == 3) snowball_clone.style.bottom = "60dvh";
     if (lane_number == 4) snowball_clone.style.bottom = "81dvh";
 
+    console.log("line 36");
+
     while (final_distance >= 0) {
+        console.log("line 39");
+        
         // Runs every hundreth of a second :D Increase snowball_distance_from_rightINT, which is a value over 100, and divide that by 100. This will give a smaller value, which will give the snowball a smoother movement across the screen. But because of this, you end up with a number way too different from the previous, which would make the snowball basically teleport across the screen, so we subtract this value from 100. Finally, we take that final value and update the DOM.
         setInterval(() => {
+            console.log("line 43");
             snowball_distance_from_rightINT++;
     
             let snowball_distance_from_rightDEC = snowball_distance_from_rightINT / 100;
