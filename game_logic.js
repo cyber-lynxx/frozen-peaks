@@ -33,7 +33,7 @@ function lane_movement(lane_number, snowball_clone) {
     if (lane_number == 3) snowball_clone.style.bottom = "60dvh";
     if (lane_number == 4) snowball_clone.style.bottom = "81dvh";
 
-    console.log("line 36");
+    console.log(`helloooo`);
 
     while (final_distance >= 0) {
         console.log("line 39");
