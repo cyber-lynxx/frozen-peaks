@@ -1,6 +1,10 @@
 let snowballs_hit = 0;
 
+let snowball_checkpoint = 0;
+
 let throw_snowball = false;
+
+let crossing_time_ms = 5000;
 
 let snowball_number = 1;
 
@@ -16,6 +20,8 @@ function delete_first_snowball(laneNumber) {
     front_snowball.remove();
 
     snowballs_hit++;
+
+    crossing_time_speedup ();
 }
 
 // throw_snowball will become true every second
@@ -38,6 +44,14 @@ document.addEventListener("keydown", (event) => {
         if (event.code === "ArrowRight") delete_first_snowball(4);
     });
 
+function crossing_time_speedup () {
+    if (snowballs_hit >= snowball_checkpoint + 15) {
+        snowball_checkpoint = snowballs_hit;
+
+        crossing_time_ms = Math.max(crossing_time_ms - 1000, 1000);
+    }
+}
+
 function lane_movement(lane_number, snowball_clone) {
     console.log(`lane_movement function initiated! Lane: ${lane_number}`);
     
@@ -53,9 +67,9 @@ function lane_movement(lane_number, snowball_clone) {
     console.log(`line 36`);
     
     // Animating the snwoball across the screen and checking for clicks
-    const crossing_time_ms = 5000;
+    const this_snowball_start_time = crossing_time_ms;
     const start_position = 100;
-    const end_position = 0;
+    const end_position = 0; 
 
     const animation_start_time = performance.now();
 
@@ -65,7 +79,7 @@ function lane_movement(lane_number, snowball_clone) {
         if (!snowball_clone.isConnected) return;
         
         const time_elapsed = current_time - animation_start_time;
-        const progress = Math.min(time_elapsed / crossing_time_ms, 1);
+        const progress = Math.min(time_elapsed / this_snowball_start_time, 1);
         const distance_from_right = start_position - progress * (start_position - end_position);
 
         snowball_clone.style.right = `${distance_from_right}dvw`;
