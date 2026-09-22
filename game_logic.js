@@ -45,10 +45,16 @@ document.addEventListener("keydown", (event) => {
     });
 
 function crossing_time_speedup () {
-    if (snowballs_hit >= snowball_checkpoint + 15) {
+    if (snowballs_hit >= snowball_checkpoint + 8) {
         snowball_checkpoint = snowballs_hit;
 
         crossing_time_ms = Math.max(crossing_time_ms - 1000, 1000);
+    }
+
+    if (crossing_time_ms === 1000) {
+        if (snowballs_hit >= snowball_checkpoint + 8) {
+            window.location.href = "https://frozen-peaks.onrender.com/math.html";
+        }
     }
 }
 
