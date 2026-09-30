@@ -65,7 +65,7 @@ function crossing_time_speedup () {
         // Redirecting the player to the question page
         if (crossing_time_ms === 1000) {
             console.log("Question time!");
-            window.location.href = "test.html";
+            window.location.href = "/test";
 
             return;
         }
