@@ -7,6 +7,15 @@ h1 {
     align-self: center;
 }
 
+email-p {
+    font-family: "Economica", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+    font-size: 45px;
+
+    align-self: flex-start;
+}
+
 h2 {
     font-family: "Economica", sans-serif;
     font-weight: 700;
