@@ -5,6 +5,8 @@ h1 {
     font-size: 45px;
 
     align-self: center;
+
+    white-space: pre-line;
 }
 
 h2 {
