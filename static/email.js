@@ -1,3 +1,5 @@
+let marker = "My number was";
+
 async function loadEmail() {
   try {
     const response_str = await fetch("https://anti-phishing-test.onrender.com/text");
@@ -22,6 +24,20 @@ async function loadEmail() {
       text = response;
     }
 
+    if (text.includes(marker)) {
+      const number = parseInt(text.slice(text.indexOf(marker) + marker.length).trim(), 10);
+
+      if (Number.isNaN(number)) {
+        console.log("No number found");
+      }
+
+      if (number > 5) {
+        let yes = true;
+      } else {
+        let no = true;
+      }
+    }
+
     console.log(text);
     
     // Updating the DOM
@@ -39,22 +55,28 @@ function checkAnswer() {
   // Checking the user's answer
   const yesButton = document.getElementById("yesbutton");
   yesButton.addEventListener("click", () => {
-    const result = yesButton.value === excerpt3.trim() ? "correct" : "incorrect";
+    if (yes) {
+      console.log("correct!");
 
-    sessionStorage.setItem("explanation", excerpt2);
-    sessionStorage.setItem("user_answer", yesButton.value);
-  
-    window.location.href = `results?answer=${result}`;
+      //window.location.href = "/game";
+    } else {
+      console.log("incorrect");
+
+      //window.location.href = "/game";
+    }
   });
 
   const noButton = document.getElementById("nobutton");
   noButton.addEventListener("click", () => {
-    const result = noButton.value === excerpt3.trim() ? "correct" : "incorrect";
+    if (no) {
+      console.log("correct!");
 
-    sessionStorage.setItem("explanation", excerpt2);
-    sessionStorage.setItem("user_answer", noButton.value);
-  
-    window.location.href = `results?answer=${result}`;
-  });
+      //window.location.href = "/game";
+    } else {
+      console.log("incorrect");
+
+      //window.location.href = "/game";
+    }
+  }, {once: true} );
 
 }
