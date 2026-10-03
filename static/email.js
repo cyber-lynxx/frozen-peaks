@@ -2,7 +2,7 @@ let marker = "My number was";
 
 async function loadEmail() {
   try {
-    const response_str = await fetch("https://anti-phishing-test.onrender.com/text");
+    const response_str = await fetch("https://frozen-peaks-4a15.onrender.com/text");
     
     // Stops the program and throws an error if the server responds with any non success code
     if (!response_str.ok) throw new Error(`HTTP error: ${response_str.status}`);
