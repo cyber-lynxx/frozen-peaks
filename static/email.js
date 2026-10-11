@@ -2,6 +2,36 @@ let yes;
 
 let no;
 
+const yesButton = document.getElementById("yesbutton");
+const noButton = document.getElementById("nobutton");
+
+// Checking the user's answer
+yesButton.addEventListener("click", () => {
+  console.log("Yes EventListener triggered!");
+  if (yes) {
+    console.log("correct!");
+
+    //window.location.href = "/game";
+  } else {
+    console.log("incorrect");
+
+    //window.location.href = "/game";
+  }
+});
+
+noButton.addEventListener("click", () => {
+  console.log("No EventListener triggered!");
+  if (no) {
+    console.log("correct!");
+
+    //window.location.href = "/game";
+  } else {
+    console.log("incorrect");
+
+    //window.location.href = "/game";
+  }
+}, {once: true} );
+
 let marker = "My number was";
 
 async function loadEmail() {
@@ -55,36 +85,3 @@ async function loadEmail() {
 }
 
 loadEmail();
-
-function checkAnswer() {
-  console.log("Function checkAnswer has been run");
-  // Checking the user's answer
-  const yesButton = document.getElementById("yesbutton");
-  yesButton.addEventListener("click", () => {
-    console.log("Yes EventListener triggered!");
-    if (yes) {
-      console.log("correct!");
-
-      //window.location.href = "/game";
-    } else {
-      console.log("incorrect");
-
-      //window.location.href = "/game";
-    }
-  });
-
-  const noButton = document.getElementById("nobutton");
-  noButton.addEventListener("click", () => {
-    console.log("No EventListener triggered!");
-    if (no) {
-      console.log("correct!");
-
-      //window.location.href = "/game";
-    } else {
-      console.log("incorrect");
-
-      //window.location.href = "/game";
-    }
-  }, {once: true} );
-
-}
