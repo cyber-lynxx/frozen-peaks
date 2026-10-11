@@ -48,7 +48,7 @@ yesButton.addEventListener("click", () => {
     lives_left -= 1;
 
     if (lives_left === 0) {
-      sessionStorage.setItem("lives_left_isZero", "0");
+      sessionStorage.setItem("lives_left_isZero", true);
     } else {
       sessionStorage.setItem("lives_left", lives_left);
     }
@@ -75,7 +75,7 @@ noButton.addEventListener("click", () => {
     lives_left -= 1;
 
     if (lives_left === 0) {
-      sessionStorage.setItem("lives_left_isZero", "0");
+      sessionStorage.setItem("lives_left_isZero", true);
     } else {
       sessionStorage.setItem("lives_left", lives_left);
     }
