@@ -63,6 +63,7 @@ async function loadEmail() {
 
       if (Number.isNaN(number)) {
         console.log("No number found");
+        return;
       }
 
       if (number > 5) {
@@ -74,6 +75,9 @@ async function loadEmail() {
       }
     }
 
+    yesButton.disabled = false;
+    noButton.disabled = false;
+    
     console.log(text);
     
     // Updating the DOM
