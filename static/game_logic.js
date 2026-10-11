@@ -4,6 +4,10 @@ let lives_left = Number(sessionStorage.getItem("lives_left")) || 3;
 
 let lives_left_isZero = Number(sessionStorage.getItem("lives_left_isZero");
 
+if (lives_left_isZero) {
+    lives_left = 0;
+}
+
 let paused = false;
 
 let snowball_checkpoint = 0;
