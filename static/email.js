@@ -2,6 +2,8 @@ let yes;
 
 let no;
 
+const overlay = document.getElementById("overlay");
+
 const yesButton = document.getElementById("yesbutton");
 const noButton = document.getElementById("nobutton");
 
@@ -11,9 +13,13 @@ yesButton.addEventListener("click", () => {
   if (yes) {
     console.log("correct!");
 
+    overlay.style.backgroundColor = "rgba(51, 153, 51, 0.5)";
+
     //window.location.href = "/game";
   } else {
     console.log("incorrect");
+
+    overlay.style.backgroundColor = "rgba(255, 51, 51, 0.5)";
 
     //window.location.href = "/game";
   }
@@ -24,9 +30,13 @@ noButton.addEventListener("click", () => {
   if (no) {
     console.log("correct!");
 
+    overlay.style.backgroundColor = "rgba(51, 153, 51, 0.5)";
+    
     //window.location.href = "/game";
   } else {
     console.log("incorrect");
+
+    overlay.style.backgroundColor = "rgba(255, 51, 51, 0.5)";
 
     //window.location.href = "/game";
   }
