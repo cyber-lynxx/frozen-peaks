@@ -1,6 +1,6 @@
-let snowballs_hit = 0;
-
-let lives_left = 3;
+// Retrieving the information about the lives and snowballs (if this is the first round, there will be no information to retrieve)
+let snowballs_hit = Number(sessionStorage.getItem("snowballs_hit")) || 0;
+let lives_left = Number(sessionStorage.getItem("lives_left")) || 3;
 
 let paused = false;
 
@@ -65,6 +65,11 @@ function crossing_time_speedup () {
         // Redirecting the player to the question page
         if (crossing_time_ms === 1000) {
             console.log("Question time!");
+
+            // Saving the information so it isn't lost when the page redirects
+            sessionStorage.setItem("snowballs_hit", snowballs_hit);
+            sessionStorage.setItem("lives_left", lives_left);
+            
             window.location.href = "/test";
 
             return;
