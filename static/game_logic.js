@@ -5,7 +5,13 @@ let lives_left = Number(sessionStorage.getItem("lives_left")) || 3;
 let lives_left_isZero = sessionStorage.getItem("lives_left_isZero");
 
 if (lives_left_isZero) {
-    lives_left = 0;
+    paused = true;
+
+    clearInterval(throw_snowball_timer);
+                
+    const game_over_msg = document.getElementById("game_over_msg");
+    game_over_msg.innerHTML = `Game Over!<br><br>Snowballs hit: ${snowballs_hit}`;
+    game_over_msg.style.display = "block";
 }
 
 let paused = false;
