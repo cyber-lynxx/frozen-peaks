@@ -47,7 +47,11 @@ yesButton.addEventListener("click", () => {
 
     lives_left -= 1;
 
-    sessionStorage.setItem("lives_left", lives_left);
+    if (lives_left === 0) {
+      sessionStorage.setItem("lives_left_isZero", "0");
+    } else {
+      sessionStorage.setItem("lives_left", lives_left);
+    }
     
     change_bg_color("rgba(255, 51, 51, 0.3)");
   }
@@ -70,7 +74,11 @@ noButton.addEventListener("click", () => {
 
     lives_left -= 1;
 
-    sessionStorage.setItem("lives_left", lives_left);
+    if (lives_left === 0) {
+      sessionStorage.setItem("lives_left_isZero", "0");
+    } else {
+      sessionStorage.setItem("lives_left", lives_left);
+    }
     
     change_bg_color("rgba(255, 51, 51, 0.3)");
     
