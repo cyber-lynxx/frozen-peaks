@@ -1,3 +1,7 @@
+let yes;
+
+let no;
+
 let marker = "My number was";
 
 async function loadEmail() {
@@ -32,11 +36,11 @@ async function loadEmail() {
       }
 
       if (number > 5) {
-        let yes = true;
-        let no = false;
+        yes = true;
+        no = false;
       } else {
-        let no = true;
-        let yes = false;
+        no = true;
+        yes = false;
       }
     }
 
@@ -57,6 +61,7 @@ function checkAnswer() {
   // Checking the user's answer
   const yesButton = document.getElementById("yesbutton");
   yesButton.addEventListener("click", () => {
+    console.log("Yes EventListener triggered!");
     if (yes) {
       console.log("correct!");
 
@@ -70,6 +75,7 @@ function checkAnswer() {
 
   const noButton = document.getElementById("nobutton");
   noButton.addEventListener("click", () => {
+    console.log("No EventListener triggered!");
     if (no) {
       console.log("correct!");
 
