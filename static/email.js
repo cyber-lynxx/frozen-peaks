@@ -7,21 +7,30 @@ const overlay = document.getElementById("overlay");
 const yesButton = document.getElementById("yesbutton");
 const noButton = document.getElementById("nobutton");
 
+function change_bg_color(bg_color) {
+  overlay.style.backgroundColor = bg_color;
+
+  setTimeout(() => {
+    overlay.style.backgroundColor = "rgba(204, 51, 51, 0)";
+  }, 3000);
+
+  setTimeout(() => {
+    window.location.href = "/game";
+  }, 3500);
+}
+
 // Checking the user's answer
 yesButton.addEventListener("click", () => {
   console.log("Yes EventListener triggered!");
   if (yes) {
     console.log("correct!");
 
-    overlay.style.backgroundColor = "rgba(51, 153, 51, 0.5)";
-
-    //window.location.href = "/game";
+    change_bg_color("rgba(51, 153, 51, 0.3)");
+    
   } else {
     console.log("incorrect");
 
-    overlay.style.backgroundColor = "rgba(255, 51, 51, 0.5)";
-
-    //window.location.href = "/game";
+    change_bg_color("rgba(255, 51, 51, 0.3)");
   }
 });
 
@@ -30,17 +39,16 @@ noButton.addEventListener("click", () => {
   if (no) {
     console.log("correct!");
 
-    overlay.style.backgroundColor = "rgba(51, 153, 51, 0.5)";
+    change_bg_color("rgba(51, 153, 51, 0.3)")
     
-    //window.location.href = "/game";
+    
   } else {
     console.log("incorrect");
 
-    overlay.style.backgroundColor = "rgba(255, 51, 51, 0.5)";
-
-    //window.location.href = "/game";
+    change_bg_color("rgba(255, 51, 51, 0.3)");
+    
   }
-}, {once: true} );
+});
 
 let marker = "My number was";
 
