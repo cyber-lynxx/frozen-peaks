@@ -4,16 +4,25 @@ let yes;
 
 let no;
 
+const checkmark_img = document.getElementById("checkmark");
+const cross_mark_img = document.getElementById("cross_mark");
+
 const overlay = document.getElementById("overlay");
 
 const yesButton = document.getElementById("yesbutton");
 const noButton = document.getElementById("nobutton");
 
 function change_bg_color(bg_color) {
+  yesButton.disabled = true;
+  noButton.disabled = true;
+  
   overlay.style.backgroundColor = bg_color;
 
   setTimeout(() => {
     overlay.style.backgroundColor = "rgba(204, 51, 51, 0)";
+
+    cross_mark_img.style.display = "none";
+    checkmark_img.style.display = "none";
   }, 3000);
 
   setTimeout(() => {
@@ -27,10 +36,14 @@ yesButton.addEventListener("click", () => {
   if (yes) {
     console.log("correct!");
 
+    checkmark_img.style.display = "block";
+
     change_bg_color("rgba(51, 153, 51, 0.3)");
     
   } else {
     console.log("incorrect");
+    
+    cross_mark_img.style.display = "block";
 
     lives_left -= 1;
 
@@ -44,12 +57,16 @@ noButton.addEventListener("click", () => {
   console.log("No EventListener triggered!");
   if (no) {
     console.log("correct!");
+    
+    checkmark_img.style.display = "block";
 
     change_bg_color("rgba(51, 153, 51, 0.3)")
     
     
   } else {
     console.log("incorrect");
+
+    cross_mark_img.style.display = "block";
 
     lives_left -= 1;
 
