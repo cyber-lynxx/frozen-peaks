@@ -1,3 +1,5 @@
+let paused = false;
+
 // Retrieving the information about the lives and snowballs (if this is the first round, there will be no information to retrieve)
 let snowballs_hit = Number(sessionStorage.getItem("snowballs_hit")) || 0;
 let lives_left = Number(sessionStorage.getItem("lives_left")) || 3;
@@ -13,8 +15,6 @@ if (lives_left_isZero) {
     game_over_msg.innerHTML = `Game Over!<br><br>Snowballs hit: ${snowballs_hit}`;
     game_over_msg.style.display = "block";
 }
-
-let paused = false;
 
 let snowball_checkpoint = 0;
 
