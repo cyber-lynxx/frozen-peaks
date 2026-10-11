@@ -92,7 +92,7 @@ body {
     width: 100dvw;
     height: 100dvh;
 
-    overflow: hidden;
+    overflow: auto;
     margin: 0%;
     padding: 0%;
 }
