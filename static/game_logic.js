@@ -1,6 +1,6 @@
 // Retrieving the information about the lives and snowballs (if this is the first round, there will be no information to retrieve)
 let snowballs_hit = Number(sessionStorage.getItem("snowballs_hit")) || 0;
-let lives_left = Number(sessionStorage.getItem("lives_left")) || 3;
+let lives_left = Number(sessionStorage.getItem("lives_left")) || 0;
 
 let paused = false;
 
