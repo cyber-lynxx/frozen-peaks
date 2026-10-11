@@ -2,7 +2,7 @@
 let snowballs_hit = Number(sessionStorage.getItem("snowballs_hit")) || 0;
 let lives_left = Number(sessionStorage.getItem("lives_left")) || 3;
 
-let lives_left_isZero = Number(sessionStorage.getItem("lives_left_isZero");
+let lives_left_isZero = sessionStorage.getItem("lives_left_isZero");
 
 if (lives_left_isZero) {
     lives_left = 0;
