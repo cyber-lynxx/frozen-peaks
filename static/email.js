@@ -1,3 +1,5 @@
+let lives_left = Number(sessionStorage.getItem("lives_left")) || 3;
+
 let yes;
 
 let no;
@@ -30,6 +32,10 @@ yesButton.addEventListener("click", () => {
   } else {
     console.log("incorrect");
 
+    lives_left -= 1;
+
+    sessionStorage.setItem("lives_left", lives_left);
+    
     change_bg_color("rgba(255, 51, 51, 0.3)");
   }
 });
@@ -45,6 +51,10 @@ noButton.addEventListener("click", () => {
   } else {
     console.log("incorrect");
 
+    lives_left -= 1;
+
+    sessionStorage.setItem("lives_left", lives_left);
+    
     change_bg_color("rgba(255, 51, 51, 0.3)");
     
   }
