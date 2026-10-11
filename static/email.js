@@ -33,8 +33,10 @@ async function loadEmail() {
 
       if (number > 5) {
         let yes = true;
+        let no = false;
       } else {
         let no = true;
+        let yes = false;
       }
     }
 
