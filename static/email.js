@@ -119,7 +119,7 @@ async function loadEmail() {
         return;
       }
 
-      if (number > 5) {
+      if (number == 0) {
         yes = true;
         no = false;
       } else {
