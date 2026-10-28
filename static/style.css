@@ -79,6 +79,7 @@ button {
     height: 25dvh;
 
     pointer-events: none;
+    z-index: 0;
 }
 
 body {
