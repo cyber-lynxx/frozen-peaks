@@ -69,8 +69,6 @@ button {
     background-color: rgba(128, 194, 194, 0.4);
 
     cursor: pointer;
-    pointer-events: none;
-    z-index: 0;
 }
 
 .ground {
@@ -79,6 +77,8 @@ button {
     width: 100dvw;
     left: 0dvw;
     height: 25dvh;
+
+    pointer-events: none;
 }
 
 body {
