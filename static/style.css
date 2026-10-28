@@ -69,6 +69,7 @@ button {
     background-color: rgba(128, 194, 194, 0.4);
 
     cursor: pointer;
+    pointer-events: none;
 }
 
 .ground {
